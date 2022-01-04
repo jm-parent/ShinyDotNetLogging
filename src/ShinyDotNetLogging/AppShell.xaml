@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="ShinyDotNetLogging.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:MaterialIconFont="clr-namespace:ShinyDotNetLogging.Helpers;assembly=ShinyDotNetLogging"
+    xmlns:ShinyDotNetLogging="clr-namespace:ShinyDotNetLogging"
+    xmlns:views="clr-namespace:ShinyDotNetLogging.Views"
+    TabBarForegroundColor="#000000"
+    TabBarTitleColor="#000000"
+    TabBarUnselectedColor="#88000000">
+    <TabBar>
+        <Tab Title="Home" Route="TabHome">
+            <Tab.Icon>
+                <FontImageSource FontFamily="MaterialDesignIcon" Glyph="{x:Static MaterialIconFont:IconFont.HomeAutomation}" />
+            </Tab.Icon>
+            <ShellContent
+                Title="Home"
+                ContentTemplate="{DataTemplate views:MainView}"
+                Route="home" />
+        </Tab>
+        <Tab Title="AboutView" Route="TabAbout">
+            <Tab.Icon>
+                <FontImageSource FontFamily="MaterialDesignIcon" Glyph="{x:Static MaterialIconFont:IconFont.Information}" />
+            </Tab.Icon>
+            <ShellContent
+                Title="AboutView"
+                ContentTemplate="{DataTemplate views:AboutView}"
+                Route="AboutView" />
+        </Tab>
+    </TabBar>
+
+    <ShellContent Route="LoginView">
+        <views:LoginView />
+    </ShellContent>
+</Shell>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvvm:ShellViewBase
+    x:Class="ShinyDotNetLogging.Views.MainView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:ShinyDotNetLogging.Behaviors"
+    xmlns:mvvm="clr-namespace:TinyMvvm.Forms;assembly=TinyMvvm.Forms"
+    xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
+    xmlns:viewmodels="clr-namespace:ShinyDotNetLogging.ViewModels"
+    rainbows:DebugRainbow.ShowColors="False"
+    x:DataType="viewmodels:MainViewModel"
+    x:TypeArguments="viewmodels:MainViewModel">
+    <StackLayout>
+        <ActivityIndicator
+            HorizontalOptions="Center"
+            IsRunning="False"
+            IsVisible="{Binding IsBusy}"
+            VerticalOptions="Center"
+            Color="Red" />
+        <Button Command="{Binding Login}" Text="Login" />
+        <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
+            <CollectionView
+                x:Name="NamesList"
+                ItemsSource="{Binding Names}"
+                ItemsUpdatingScrollMode="KeepItemsInView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <pancakeview:PancakeView Margin="2" Padding="6">
+                            <Label Text="{Binding}" TextColor="Black" />
+                            <pancakeview:PancakeView.Behaviors>
+                                <behaviors:ENViewTappedBehaviors
+                                    AnimationType="ScaleDown"
+                                    Command="{Binding BindingContext.Details, Source={x:Reference NamesList}}"
+                                    CommandParameter="{Binding}" />
+                            </pancakeview:PancakeView.Behaviors>
+                        </pancakeview:PancakeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+    </StackLayout>
+</mvvm:ShellViewBase>

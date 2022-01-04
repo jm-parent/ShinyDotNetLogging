@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<forms:ViewBase
+    x:Class="ShinyDotNetLogging.Views.AboutView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:TinyMvvm.Forms;assembly=TinyMvvm.Forms"
+    xmlns:viewmodels="clr-namespace:ShinyDotNetLogging.ViewModels"
+    x:DataType="viewmodels:AboutViewModel"
+    x:TypeArguments="viewmodels:AboutViewModel">
+    <Grid>
+        <Button
+            Command="{Binding Home}"
+            Text="Go home!"
+            VerticalOptions="Center" />
+    </Grid>
+</forms:ViewBase>
