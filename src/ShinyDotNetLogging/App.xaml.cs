@@ -23,7 +23,7 @@ namespace ShinyDotNetLogging
 			RegisterServices(TinyIoCContainer.Current);
 			InitTinyMvvm();
 			
-
+		
 			MainPage = new AppShell();
 		}
 
