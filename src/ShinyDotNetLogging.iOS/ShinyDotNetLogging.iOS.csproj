@@ -141,6 +141,9 @@
     <PackageReference Include="Shiny">
       <Version>2.4.1.2971</Version>
     </PackageReference>
+    <PackageReference Include="Shiny.Logging.AppCenter">
+      <Version>2.4.1.2971</Version>
+    </PackageReference>
     <PackageReference Include="TinyMvvm.Autofac">
       <Version>4.0.1-pre2</Version>
     </PackageReference>

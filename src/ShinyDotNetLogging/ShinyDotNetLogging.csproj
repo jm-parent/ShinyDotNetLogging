@@ -25,6 +25,7 @@
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.4.0" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
     <PackageReference Include="Shiny" Version="2.4.1.2971" />
+    <PackageReference Include="Shiny.Logging.AppCenter" Version="2.4.1.2971" />
     <PackageReference Include="TinyMvvm.Autofac" Version="4.0.1-pre2" />
     <PackageReference Include="TinyMvvm.Forms" Version="4.0.1-pre2" />
     <PackageReference Include="TinyMvvm.TinyIoC" Version="4.0.1-pre2" />

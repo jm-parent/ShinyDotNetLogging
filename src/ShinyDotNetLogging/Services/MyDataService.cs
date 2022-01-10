@@ -1,4 +1,5 @@
-﻿using ShinyDotNetLogging.Services.Base;
+﻿using Microsoft.AppCenter.Analytics;
+using ShinyDotNetLogging.Services.Base;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

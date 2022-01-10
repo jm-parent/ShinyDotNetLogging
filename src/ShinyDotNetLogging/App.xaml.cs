@@ -27,14 +27,6 @@ namespace ShinyDotNetLogging
 			MainPage = new AppShell();
 		}
 
-        private void InitAppCenter()
-        {
-			AppCenter.Start("android=030ff388-c082-4e55-a4b5-05127b9569b0;" +
-				   "uwp={Your UWP App secret here};" +
-				   "ios=ee80f39e-3131-4631-a9ca-a7483e6effdb;",
-				   typeof(Analytics), typeof(Crashes));
-		}
-
         private void InitTinyMvvm()
 		{
 			//Setup View/ViewModel Links
@@ -87,8 +79,6 @@ namespace ShinyDotNetLogging
 		}
 		protected override void OnStart()
 		{
-			InitAppCenter();
-			
 		}
 
 		protected override void OnSleep()
